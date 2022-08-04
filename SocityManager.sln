@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.SocityManager", "API.SocityManager\API.SocityManager.csproj", "{FF16B250-C226-4BBF-9EBE-FD6363320B46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{366C0AE0-07D2-4F7F-8426-430AA3FFC664}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{20DB9DB1-2930-4213-B914-B2B67CBDA521}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{4B40049E-3C85-4EF9-89A6-BD2B47065CD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{05314ED8-85A9-4469-9B90-A666B5C790A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8B0B9754-8C79-4E55-B602-0EB0A53B6549}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database.SocityManager", "Database.SocityManager\Database.SocityManager.sqlproj", "{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF16B250-C226-4BBF-9EBE-FD6363320B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF16B250-C226-4BBF-9EBE-FD6363320B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF16B250-C226-4BBF-9EBE-FD6363320B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF16B250-C226-4BBF-9EBE-FD6363320B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF16B250-C226-4BBF-9EBE-FD6363320B46} = {366C0AE0-07D2-4F7F-8426-430AA3FFC664}
+		{F9FBB40E-08C1-4993-BDD7-AFC844371C3D} = {20DB9DB1-2930-4213-B914-B2B67CBDA521}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8EF9683-93D9-4D83-8AD6-F15EE0ED79DE}
+	EndGlobalSection
+EndGlobal
