@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE [dbo].[SP_Local_Delete]
+	@id UNIQUEIDENTIFIER
+AS
+	DELETE FROM [Local]
+	WHERE [Id] = @id
+GO

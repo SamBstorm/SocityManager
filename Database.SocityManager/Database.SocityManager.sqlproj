@@ -57,10 +57,30 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="ScalarFunctions" />
+    <Folder Include="PostScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Local.sql" />
     <Build Include="Tables\Building.sql" />
     <Build Include="Tables\User.sql" />
+    <Build Include="StoredProcedures\SP_Building_Insert.sql" />
+    <Build Include="StoredProcedures\SP_Building_Update.sql" />
+    <Build Include="StoredProcedures\SP_Building_Delete.sql" />
+    <Build Include="StoredProcedures\SP_Local_Insert.sql" />
+    <Build Include="StoredProcedures\SP_Local_Update.sql" />
+    <Build Include="StoredProcedures\SP_Local_Delete.sql" />
+    <Build Include="ScalarFunctions\SF_Salt.sql" />
+    <Build Include="ScalarFunctions\SF_Hash.sql" />
+    <Build Include="StoredProcedures\SP_User_Insert.sql" />
+    <Build Include="StoredProcedures\SP_User_Delete.sql" />
+    <Build Include="StoredProcedures\SP_User_Check.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.SocityManager.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostScripts\Main.PostDeployment.sql" />
   </ItemGroup>
 </Project>

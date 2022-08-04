@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION [dbo].[SF_Hash]
+(
+	@salted_password NVARCHAR(68)
+)
+RETURNS VARBINARY(64)
+AS
+BEGIN
+	RETURN HASHBYTES('SHA2_512',@salted_password)
+END

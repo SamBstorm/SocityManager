@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.SocityManager\BLL.SocityManager.csproj" />
+    <ProjectReference Include="..\Common.SocityManager\Common.SocityManager.csproj" />
+    <ProjectReference Include="..\DAL.SocityManager\DAL.SocityManager.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,11 @@
+﻿CREATE FUNCTION [dbo].[SF_Salt]
+(
+	@password NVARCHAR(32),
+	@salt UNIQUEIDENTIFIER
+)
+RETURNS NVARCHAR(68)
+AS
+BEGIN
+	DECLARE @salt_char CHAR(36) = CONVERT(CHAR(36),@salt)
+	RETURN CONCAT(SUBSTRING(@salt_char,1,18), @password, SUBSTRING(@salt_char,19,18))
+END
