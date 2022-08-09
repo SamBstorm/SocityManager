@@ -39,6 +39,14 @@ namespace DAL.SocityManager.Services
             return connection.ExecuteReader<Building>(command, Mapper.ToBuilding);
         }
 
+        public Building GetByLocal(Guid localId)
+        {
+            Connection connection = new Connection(InvariantName, ConnectionString);
+            Command command = new Command("SELECT * FROM [Building] WHERE [Id] = (SELECT [BuildingId] FROM [Local] WHERE [Id] = @id)");
+            command.AddParameter("id", localId);
+            return connection.ExecuteReader<Building>(command, Mapper.ToBuilding).SingleOrDefault();
+        }
+
         public Guid Insert(Building entity)
         {
             Connection connection = new Connection(InvariantName, ConnectionString);

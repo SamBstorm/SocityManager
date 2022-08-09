@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BLL.SocityManager.Entities
+﻿namespace API.SocityManager.Models
 {
-    public class Building
+    public class BuildingUpdate
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Number { get; set; }
         public string Street { get; set; }
@@ -14,6 +9,5 @@ namespace BLL.SocityManager.Entities
         public string ZipCode { get; set; }
         public int FloorCount { get; set; }
         public int ParkingCount { get; set; }
-        public List<Local> Locals { get; set; }
     }
 }

@@ -6,5 +6,6 @@ namespace Common.SocityManager.Repositories
 {
     public interface IBuildingRepository<TBuilding> : IRepository<TBuilding,Guid>
     {
+        TBuilding GetByLocal(Guid localId);
     }
 }
