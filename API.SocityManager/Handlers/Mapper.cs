@@ -33,5 +33,20 @@ namespace API.SocityManager.Handlers
                 ParkingCount = entity.ParkingCount
             };
         }
+
+        public static Local ToLocal(this LocalCreate entity)
+        {
+            if (entity == null) return null;
+            return new Local()
+            {
+                Name = entity.Name,
+                Surface = entity.Surface,
+                WorkStationCount = entity.WorkStationCount,
+                BuildingFloor = entity.BuildingFloor,
+                HaveAirCo = entity.HaveAirCo,
+                HaveProjector = entity.HaveProjector,
+                Building = new Building() { Id = entity.BuildingId}
+            };
+        }
     }
 }

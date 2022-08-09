@@ -14,6 +14,8 @@ namespace DAL.SocityManager.Services
         public ServiceBase(IConfiguration config)
         {
            DbProviderFactories.RegisterFactory("System.Data.SqlClient", SqlClientFactory.Instance);
+            //Si besoin d'un autre client (Oracle par exemple, il nous faut définir les liens entre les invariant names et les instances de factory
+            //DbProviderFactories.RegisterFactory("System.Data.OracleClient", OracleClientFactory.Instance);
             _config = config;
         }
 

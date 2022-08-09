@@ -27,8 +27,7 @@ namespace BLL.SocityManager.Services
         public Building Get(Guid id)
         {
             Building result = _repo.Get(id).ToBLL();
-            IEnumerable<Local> locals = _localRepo.GetByBuilding(id).Select(l => l.ToBLL());
-            foreach (Local local in locals) result.Locals.Add(local);
+            result.Locals = _localRepo.GetByBuilding(id).Select(l => l.ToBLL()).ToList();
             return result;
         }
 

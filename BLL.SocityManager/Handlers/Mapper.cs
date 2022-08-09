@@ -64,8 +64,7 @@ namespace BLL.SocityManager.Handlers
                 City = entity.City,
                 ZipCode = entity.ZipCode,
                 FloorCount = entity.FloorCount,
-                ParkingCount = entity.ParkingCount,
-                Locals = new List<B.Local>()
+                ParkingCount = entity.ParkingCount
             };
         }
         public static D.User ToDAL(this B.User entity)

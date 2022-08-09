@@ -1,5 +1,8 @@
-﻿using BLL.SocityManager.Entities;
+﻿using API.SocityManager.Handlers;
+using API.SocityManager.Models;
+using BLL.SocityManager.Entities;
 using Common.SocityManager.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -42,13 +45,15 @@ namespace API.SocityManager.Controllers
 
         // POST api/<LocalController>
         [HttpPost()]
-        public ActionResult<int> Post(Local newLocal)
+        [Authorize]
+        public ActionResult<int> Post(LocalCreate newLocal)
         {
-            Guid newId = _localRepository.Insert(newLocal);
+            Guid newId = _localRepository.Insert(newLocal.ToLocal());
             return CreatedAtAction(nameof(Get),new { id = newId }, newId);
         }
 
         // PUT api/<LocalController>/5
+        [Authorize]
         [HttpPut("{id:Guid}")]
         public ActionResult Put(Guid id, Local newLocal)
         {
@@ -66,6 +71,7 @@ namespace API.SocityManager.Controllers
         }
 
         // DELETE api/<LocalController>/5
+        [Authorize]
         [HttpDelete("{id:Guid}")]
         public ActionResult Delete(Guid id)
         {
