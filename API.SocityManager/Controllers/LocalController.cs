@@ -45,7 +45,7 @@ namespace API.SocityManager.Controllers
 
         // POST api/<LocalController>
         [HttpPost()]
-        [Authorize]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult<int> Post(LocalCreate newLocal)
         {
             Guid newId = _localRepository.Insert(newLocal.ToLocal());
@@ -53,15 +53,15 @@ namespace API.SocityManager.Controllers
         }
 
         // PUT api/<LocalController>/5
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id:Guid}")]
-        public ActionResult Put(Guid id, Local newLocal)
+        public ActionResult Put(Guid id, LocalCreate newLocal)
         {
 
             try
             {
                 if (_localRepository.Get(id) is null) throw new Exception();
-                _localRepository.Update(id, newLocal);
+                _localRepository.Update(id, newLocal.ToLocal());
                 return NoContent();
             }
             catch (Exception)

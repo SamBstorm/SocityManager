@@ -37,8 +37,9 @@ namespace API.SocityManager.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Iat,DateTime.UtcNow.ToString()),
                     new Claim("Email",u_db.Email),
-                    new Claim("UserId",u_db.Id.ToString()) }
-                ;
+                    new Claim("UserId",u_db.Id.ToString()),
+                    new Claim(ClaimTypes.Role, "Admin")
+                };
                 SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
                 SigningCredentials signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 JwtSecurityToken token = new JwtSecurityToken(
