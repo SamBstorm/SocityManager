@@ -49,7 +49,7 @@ namespace API.SocityManager.Controllers
                     expires : DateTime.UtcNow.AddMinutes(3),
                     signingCredentials : signIn
                     );
-                return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+                return Ok(new { id=u_db.Id, email= user.Email, token = new JwtSecurityTokenHandler().WriteToken(token) });
             }
             catch (Exception)
             {

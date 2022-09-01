@@ -14,6 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors((options) => {
+    options.AddDefaultPolicy(policy => {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddScoped<IUserRepository<D.Entities.User>, D.Services.UserService>();
 builder.Services.AddScoped<IUserRepository<B.Entities.User>, B.Services.UserService>();
 builder.Services.AddScoped<IBuildingRepository<D.Entities.Building>, D.Services.BuildingService>();
@@ -42,6 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();
